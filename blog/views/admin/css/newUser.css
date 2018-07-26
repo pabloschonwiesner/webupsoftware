@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'NexaBlack';
+	src: url('./../tools/fonts/nexa/original_nexaBlack.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'NexaBlack', sans-serif;
+}
+
+.containerUsers {
+	width: 75%;
+	min-width: 1024px;
+	margin: 0 auto;
+}
+
+.mx-auto {
+	margin-top: 2rem;
+}
+
+form {
+	padding-top: 3rem;
+	padding-left: 2rem;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: 22rem;
+}
+
+label {
+	width: 120px;
+}
+
+input[type="text"], input[type="password"] {
+	width: 70%;
+	padding: 0.5rem 2rem;
+}
+
+input[type="submit"] {
+	position: absolute;
+	bottom: 1rem;
+	width: 80%;
+}
+
+.msj {
+	margin-top: 3rem;
+}

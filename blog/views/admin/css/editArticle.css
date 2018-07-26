@@ -1,0 +1,17 @@
+.fotoSeleccionada {
+	font-size: 0.75rem;
+}
+
+ol, ul {
+	margin-left: 1rem;
+}
+
+.botonera {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+input[type="checkbox"] {
+	margin-right: 1rem;
+}

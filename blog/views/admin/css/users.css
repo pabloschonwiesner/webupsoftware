@@ -1,0 +1,48 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'NexaBlack';
+	src: url('./../tools/fonts/nexa/original_nexaBlack.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'NexaBlack', sans-serif;
+}
+
+.containerUsers {
+	width: 75%;
+	min-width: 1024px;
+	margin: 0 auto;
+}
+
+.titulo {
+	margin: 2rem 0;
+}
+
+.avatar {
+	width: 3rem;
+}
+
+.avatarImg {
+	width: 100%;
+	border-radius: 50%;
+}
+
+.table td {
+	padding-bottom: 0.3rem;
+}
+
+td {
+	vertical-align: middle;
+}
+
+.msj {
+	margin-top: 3rem;
+}

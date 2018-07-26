@@ -1,0 +1,144 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'NexaBlack';
+	src: url('./../tools/fonts/nexa/original_nexaBlack.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NexaBold';
+	src: url('./../tools/fonts/nexa/original_Nexa_Bold.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NexaXBold';
+	src: url('./../tools/fonts/nexa/original_nexa_XBold.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('iconFonts/icomoon.eot?fbvm8q');
+  src:  url('iconFonts/icomoon.eot?fbvm8q#iefix') format('embedded-opentype'),
+    url('iconFonts/icomoon.ttf?fbvm8q') format('truetype'),
+    url('iconFonts/icomoon.woff?fbvm8q') format('woff'),
+    url('iconFonts/icomoon.svg?fbvm8q#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cog:before {
+  content: "\e994";
+  font-size: 3rem;
+  color: #666;
+}
+
+body {
+	font-family: 'NexaBlack', sans-serif;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	border-bottom: 1px solid gray;
+	justify-content: space-between;
+	padding: 0.5rem 10rem;
+}
+
+
+.usuario {
+	width: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	z-index: 1000;
+	height: 76px;
+}
+
+
+.usuario > img {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+}
+
+.usuario > span {
+	font-size: 0.75rem;
+}
+
+.menu {
+	position: absolute;
+	top: 75px;
+	display: none;
+	transition: all 0.5s ease;
+}
+
+.desplegado {
+	display: flex;
+	transform: all;
+	background-color: #555;
+}
+
+.usuario > ul > a, .usuario > ul > a:active, .usuario > ul > a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+.usuario > ul > a > li {
+	list-style: none;
+	background-color: #ccc;
+	padding: 0.5rem;
+	font-family: 'NexaXBold', sans-serif;
+}
+
+.itemMenu {
+	list-style: none;
+}
+
+.itemMenu > a {
+	line-height: 65px;
+	font-family: 'NexaXBold', sans-serif;
+	font-size: 1.25rem;
+	text-decoration: none;
+	color: black;
+	transition: all 0.5s ease;
+}
+
+.itemMenu > a:hover {
+	transform: scale(1.1);
+	color: #0099ff;
+}
+
+#isologo {
+	width: 350px;
+}
+
+#imgLogo {
+	width: 100%;
+}
+
+.btn {
+	margin-right: 0.75rem;
+}
