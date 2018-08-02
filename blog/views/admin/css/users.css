@@ -46,3 +46,10 @@ td {
 .msj {
 	margin-top: 3rem;
 }
+
+@media screen and (max-width: 600px) {
+	.containerUsers {
+		min-width: 0;
+		width: 100%;
+	}
+}

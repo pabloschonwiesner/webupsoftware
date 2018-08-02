@@ -4,16 +4,16 @@
 	<meta charset="UTF-8">
 	<title>Editar artículo de Blog | Up Software</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/normalize.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/demo.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/medium-editor.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/default.css">
+	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/normalize.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/demo.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/medium-editor.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/default.css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/medium-editor-insert-plugin.min.css">
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/adminBlog.css">
-	<link rel="stylesheet" href="./../../../views/admin/css/editArticle.css">
-	<?php include_once './../views/admin/headerArticles.php'; ?>
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/medium-editor-insert-plugin.min.css">
+	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/adminBlog.css">
+	<link rel="stylesheet" href="./../../views/admin/css/editArticle.css">
+	<?php include_once './views/admin/headerArticles.php'; ?>
 </head>
 <body>
 	<div class="container">
@@ -71,21 +71,22 @@
 				?>
 		</div>
 	</div>
-	<script src="<?php echo BASE_URL; ?>../views/admin/js/jquery.min.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/jquery.ui.widget.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/jquery.iframe-transport.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/jquery.fileupload.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/medium-editor.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/handlebars.runtime.min.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/jquery-sortable-min.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/medium-editor-insert-plugin.min.js"></script>
+	<!-- <script src="<?php echo BASE_URL; ?>../views/admin/js/jquery.min.js"></script> -->
+    <script src="<?php echo BASE_URL; ?>./js/jquery.min.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/jquery.ui.widget.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/jquery.iframe-transport.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/jquery.fileupload.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/medium-editor.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/handlebars.runtime.min.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/jquery-sortable-min.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/medium-editor-insert-plugin.min.js"></script>
     
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/templates.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/core.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/embeds.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/images.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/htmlspecialchars.js"></script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/editArticle.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/templates.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/core.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/embeds.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/images.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/htmlspecialchars.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/editArticle.js"></script>
 
     <script>
         var editor = new MediumEditor('.editable', {
@@ -116,6 +117,6 @@
             });
         });
     </script>
-    <script src="<?php echo BASE_URL; ?>../views/admin/js/menu.js"></script>
+    <script src="<?php echo BASE_URL; ?>./js/menu.js"></script>
 </body>
 </html>

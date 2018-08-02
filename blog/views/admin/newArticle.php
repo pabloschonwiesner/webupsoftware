@@ -4,20 +4,20 @@
 	<meta charset="UTF-8">
 	<title>Nuevo artículo de Blog | Up Software</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/normalize.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/demo.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/medium-editor.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/default.css">
+	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/normalize.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/demo.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/medium-editor.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/default.css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/medium-editor-insert-plugin.min.css">
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/adminBlog.css">
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/newArticle.css">
-	<?php include_once '../views/admin/headerArticles.php'; ?>
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/medium-editor-insert-plugin.min.css">
+	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/adminBlog.css">
+	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/newArticle.css">
+	<?php include_once 'views/admin/headerArticles.php'; ?>
 </head>
 <body>
     <?php 
-        if($_SESSION['usuario'] === '') {
+        if(!isset($_SESSION['usuario']) || $_SESSION['usuario'] === '') {
             header('Location: ' . './login');
         }
      ?>
@@ -51,8 +51,6 @@
 						<label for="file">Foto principal</label>
 						<input type="file" name="file" id="file" class="form-control">
 					</div>
-					<!-- <textarea name="textoBlog" id="textoBlog" cols="30" class="editable"></textarea>
-					<br> -->
 					<input class="btn btn-primary" type="submit" value="Guardar" id="btnSave">
 				</form>
 		</div>

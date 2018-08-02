@@ -5,9 +5,9 @@
 	<title>ABM Usuarios Blog | Up Software</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/adminBlog.css">
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/newUser.css">
-	<?php include_once './../views/admin/headerArticles.php'; ?>
+	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/adminBlog.css">
+	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/newUser.css">
+	<?php include_once './views/admin/headerArticles.php'; ?>
 </head>
 <body>
 	<div class="containerUsers">
@@ -56,6 +56,6 @@
 			</div>
 		</div>
 	</div>   
-	<script src="<?php echo BASE_URL; ?>../views/admin/js/menu.js"></script>
+	<script src="<?php echo BASE_URL; ?>views/admin/js/menu.js"></script>
 </body>
 </html>

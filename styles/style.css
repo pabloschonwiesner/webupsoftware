@@ -53,6 +53,7 @@ font-style: normal;
 }
 
 
+
 .icon-circle-up:before {
   content: "\ea41";
 }
@@ -60,6 +61,18 @@ font-style: normal;
 .icon-circle-down:before {
   content: "\ea43";
 }
+
+.icon-facebook2:before {
+  content: "\ea91";
+  /*color: white;*/
+  font-size: 1.75rem;
+}
+.icon-linkedin:before {
+  content: "\eac9";
+  /*color: white;*/
+  font-size: 1.75rem;
+}
+
 
 
 body {
@@ -139,7 +152,7 @@ nav > ul {
 	text-decoration: none;
 }
 
-.headerTransparent > nav > ul > li > a {
+.headerTransparent > nav > ul > li > a, .headerTransparent > nav > ul > li > a > span {
 	color: white;
 }
 
@@ -159,7 +172,7 @@ nav > ul {
 	color: black;
 }
 
-.headerTransparent > nav > ul > li > a:active, .headerTransparent > nav > ul > li > a:hover, #inicioMenu {
+.headerTransparent > nav > ul > li > a:active, .headerTransparent > nav > ul > li > a:hover, #inicioMenu, .headerTransparent > nav > ul > li > a > span:hover {
 	color: #0099FF;
 }
 

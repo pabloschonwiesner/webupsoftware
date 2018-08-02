@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<title>Panel de administración del Blog de UpSoftware</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/adminBlog.css">
-	<link rel="stylesheet" href="<?php echo BASE_URL; ?>../views/admin/css/paginacion.css">
+	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/adminBlog.css">
+	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/paginacion.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-	<?php include_once './../views/admin/headerArticles.php'; ?>
+	<?php include_once './views/admin/headerArticles.php'; ?>
 </head>
 <body>
 	<div class="container">
 		<?php 
-        if($_SESSION['usuario'] === '') {
+        if(!isset($_SESSION['usuario']) || $_SESSION['usuario'] === '') {
             header('Location: ' . './../login');
         };
         ?>
@@ -55,13 +55,13 @@
 						
 				echo	'</table>';
 				echo    '</div>';
-			include_once('./../views/paginacionAdmin.php');
+			include_once('./views/paginacionAdmin.php');
 			}
 
 		 ?>
 		
 		</div>
 	</div>
-	<script src="<?php echo BASE_URL; ?>../views/admin/js/menu.js"></script>
+	<script src="<?php echo BASE_URL; ?>views/admin/js/menu.js"></script>
 </body>
 </html>

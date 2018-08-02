@@ -7,7 +7,7 @@ $router->get('/admin/users', function() use($pdo) {
 	$prepared->execute();
 	$usuarios = $prepared->fetchAll(PDO::FETCH_ASSOC);
 
-	return render('./../views/admin/users.php', ['usuarios' => $usuarios]);
+	return render('./views/admin/users.php', ['usuarios' => $usuarios]);
 });
 
 $router->get('/admin/usersActivate/{id}', function($id) use($pdo) {
@@ -25,11 +25,11 @@ $router->get('/admin/usersActivate/{id}', function($id) use($pdo) {
 		'id' => $id
 	]);
 
-	return render('./../views/admin/userActivated.php', ['usuarios' => $usuarios]);
+	return render('./views/admin/userActivated.php', ['usuarios' => $usuarios]);
 });
 
 $router->get('/admin/newUser', function() use($pdo) {
-	return render('./../views/admin/newUser.php');
+	return render('./views/admin/newUser.php');
 });
 
 $router->post('/admin/newUser', function() use($pdo) {
@@ -70,7 +70,7 @@ $router->post('/admin/newUser', function() use($pdo) {
 			move_uploaded_file($tmp_name, $carpeta . '\\' . $file);
 		}
 
-	return render('./../views/admin/newUser.php', [ 'result' => $result ]);
+	return render('./views/admin/newUser.php', [ 'result' => $result ]);
 });
 
 $router->get('/admin/editUser/{id}', function($id) use($pdo) {
@@ -81,7 +81,7 @@ $router->get('/admin/editUser/{id}', function($id) use($pdo) {
 	]);
 	$usuario = $prepared->fetchAll(PDO::FETCH_ASSOC);
 
-	return render('./../views/admin/editUser.php', ['usuario' => $usuario]);
+	return render('./views/admin/editUser.php', ['usuario' => $usuario]);
 });
 
 $router->post('/admin/editUser', function() use($pdo) {
@@ -122,7 +122,7 @@ $router->post('/admin/editUser', function() use($pdo) {
 			move_uploaded_file($tmp_name, $carpeta . '\\' . $file);
 		}
 
-	return render('./../views/admin/editUser.php', [ 'result' => $result ]);
+	return render('./views/admin/editUser.php', [ 'result' => $result ]);
 });
 
 ?>

@@ -1,10 +1,21 @@
 <?php 
 
+// $entorno = 'produccion';
+$entorno = 'desarrollo';
 
-$dbHost = 'localhost';
-$dbName = 'blogupsoftware';
-$dbUser = 'root';
-$dbPass = '';
+if($entorno == 'produccion') {
+	$dbHost = 'localhost';
+	$dbName = 'zaphalo_blogupsoftware';
+	$dbUser = 'zaphalo_upsoft';
+	$dbPass = '31122018';	
+} else {
+	$dbHost = 'localhost';
+	$dbName = 'blogupsoftware';
+	$dbUser = 'root';
+	$dbPass = '';
+}
+
+
 
 try {
 	$pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);

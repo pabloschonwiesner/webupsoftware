@@ -5,21 +5,23 @@ error_reporting(E_ALL);
 
 session_start();
 
-require_once './../vendor/autoload.php';
-require_once('./../views/admin/config.php');
+require_once './vendor/autoload.php';
+require_once('./views/admin/config.php');
 define('POSTSPORPAGINA', $blog_config['post_por_pagina']);
-require_once('./../views/admin/funciones.php');
+require_once('./views/admin/funciones.php');
 
 $baseUrl = '';
 $baseDir = str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 $baseUrl = 'http://' . $_SERVER['HTTP_HOST'] . $baseDir;
 define('BASE_URL', $baseUrl);
-define('BASE_LOCAL_IMAGE', 'c:\xampp\htdocs\upsoftware\web\blog\public\media\images\\');
-define('BASE_LOCAL_IMAGES_UPLOAD', 'C:\xampp\htdocs\Upsoftware\web\blog\public\media\uploads\\');
-define('BASE_LOCAL_IMAGES_THUMBNAIL', 'C:\xampp\htdocs\Upsoftware\web\blog\public\media\uploads\thumbnail\\');
-define('BASE_LOCAL_IMAGES_WEB', 'http://localhost:81/upsoftware/web/blog/public/media/images/');
+
+
+define('BASE_LOCAL_IMAGE', 'c:\xampp\htdocs\upsoftware\web\blog\media\images\\');
+define('BASE_LOCAL_IMAGES_UPLOAD', 'C:\xampp\htdocs\Upsoftware\web\blog\media\uploads\\');
+define('BASE_LOCAL_IMAGES_THUMBNAIL', 'C:\xampp\htdocs\Upsoftware\web\blog\media\uploads\thumbnail\\');
+define('BASE_LOCAL_IMAGES_WEB', 'http://localhost:81/upsoftware/web/blog/media/images/');
 define('BASE_LOCAL_WEB', 'http://localhost:81/upsoftware/web/');
-define('BASE_BLOG_WEB', 'http://localhost:81/upsoftware/web/blog/public/');
+define('BASE_BLOG_WEB', 'http://localhost:81/upsoftware/web/blog/');
 
 $route = $_GET['route'] ?? '/';
 
@@ -28,15 +30,19 @@ function render($fileName, $params = []) {
 	extract($params);
 	include $fileName;
 	return ob_get_clean();
-}
+};
 
-use Phroute\Phroute\RouteCollector;
-use Phroute\Phroute\Dispatcher;
+	use Phroute\Phroute\RouteCollector;
+	use Phroute\Phroute\Dispatcher;
+	require_once './vendor/Phroute/Phroute/src/Phroute/RouteCollector.php';
+	require_once './vendor/Phroute/Phroute/src/Phroute/Dispatcher.php';
+
 
 $router = new RouteCollector();
 
-require_once('./../routes/users.php');
-require_once('./../routes/articles.php');
+require_once('./routes/users.php');
+require_once('./routes/articles.php');
+
 
 $router->get('/media/images/{nroArticulo}/{nombreArchivo}', function($nroArticulo, $nombreArchivo) {
 	$dir = opendir(BASE_LOCAL_IMAGE . $nroArticulo);
@@ -52,7 +58,7 @@ $router->post('/media/upload.php', function() {
 });
 
 $router->get('/admin/login', function() use($pdo){
-	return render('./../views/admin/login.php');
+	return render('./views/admin/login.php');
 });
 
 $router->post('/admin/login', function() use($pdo){
@@ -77,7 +83,7 @@ $router->post('/admin/login', function() use($pdo){
 	};
 
 
-	return render('./../views/admin/login.php', ['usuario' => $rta]);
+	return render('./views/admin/login.php', ['usuario' => $rta]);
 });
 
 $router->get('/admin/cerrarSesion', function(){

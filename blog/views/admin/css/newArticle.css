@@ -5,3 +5,10 @@
 .observacion {
 	font-size: 0.75rem;
 }
+
+@media screen and (max-width: 600px) {
+	.observacion {
+		font-size: 0.6rem;
+		margin-left: 1rem;
+	}
+}

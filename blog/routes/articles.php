@@ -7,7 +7,7 @@ $router->get('/admin/edit/{id}', function($id) use($pdo) {
 	$prepared->execute(array('id'=>$id));
 	$articulo = $prepared->fetchAll(PDO::FETCH_ASSOC);
 
-	return render('./../views/admin/editArticle.php', [ 'articulo' => $articulo ]);
+	return render('./views/admin/editArticle.php', [ 'articulo' => $articulo ]);
 });
 
 $router->post('/admin/edit/{id}', function($id) use($pdo) {
@@ -91,11 +91,11 @@ $router->post('/admin/edit/{id}', function($id) use($pdo) {
 		]);
 	}
 
-	return render('./../views/admin/editArticle.php', [ 'result' => $result ]);
+	return render('./views/admin/editArticle.php', [ 'result' => $result ]);
 });
 
 $router->get('/admin/create', function() use($pdo) {
-	return render('./../views/admin/newArticle.php');
+	return render('./views/admin/newArticle.php');
 });
 
 $router->post('/admin/create', function() use($pdo) {
@@ -130,7 +130,7 @@ $router->post('/admin/create', function() use($pdo) {
 	if(!empty($file) && !empty($tmp_name)) {
 		move_uploaded_file($tmp_name, $rutaFoto . '\\' . $file);
 	}
-	return render('./../views/admin/newArticle.php', ['result' => $result]);
+	return render('./views/admin/newArticle.php', ['result' => $result]);
 });
 
 $router->get('/admin/p/{pagina}', function($pagina) use($pdo) {
@@ -151,11 +151,10 @@ $router->get('/admin/p/{pagina}', function($pagina) use($pdo) {
 	$numero_paginas = ceil($total_posts / POSTSPORPAGINA);
 
 	
-	return render('./../views/admin/index.php', ['articulos'=> $articulos, 'totalPaginas' => $numero_paginas, 'paginaActual' => $pagina]);
+	return render('./views/admin/index.php', ['articulos'=> $articulos, 'totalPaginas' => $numero_paginas, 'paginaActual' => $pagina]);
 });
 
-$router->get('/admin/articlePublished/{id}', function($id) use($pdo) {
-	
+$router->get('/admin/articlePublished/{id}', function($id) use($pdo) {	
     if($_SESSION['usuario'] === '') {
         header('Location: ' . './../login');
     } else {
@@ -169,19 +168,17 @@ $router->get('/admin/articlePublished/{id}', function($id) use($pdo) {
 		if($rta[0]['mejorArticulo'] == 1) {
 			$articles = '';
 		} else {
-			$sql1 = "UPDATE Articulos set publicado = :publicado WHERE id = :id";
+			$sql1 = "UPDATE Articulos set publicado = :publicado, fechaHoraPublicacion = :fechaHoraPublicacion WHERE id = :id";
 			$prepared1 = $pdo->prepare($sql1);
 			$articles = $prepared1->execute([
 				'publicado' => !$rta[0]['publicado'],
+				'fechaHoraPublicacion' => date("Y-m-d H:i:s"),
 				'id' => $id
 			]);			
 		}
 
-
-
-		return render('./../views/admin/articlePublished.php', ['articles' => $articles]);
-    }
-	
+		return render('./views/admin/articlePublished.php', ['articles' => $articles]);
+    }	
 });
 
 $router->get('/{id}', function($id) use($pdo) {
@@ -190,7 +187,7 @@ $router->get('/{id}', function($id) use($pdo) {
 	$prepared->execute(array('id'=>$id));
 	$articulo = $prepared->fetchAll(PDO::FETCH_ASSOC);
 
-	return render('./../views/article.php', ['articulo' => $articulo]);
+	return render('./views/article.php', ['articulo' => $articulo]);
 });
 
 $router->get('/p/{pagina}',function($pagina) use($pdo) {
@@ -201,7 +198,7 @@ $router->get('/p/{pagina}',function($pagina) use($pdo) {
 
 	$inicio = $pagina > 1 ? $pagina * $postPorPagina - $postPorPagina : 0;
 
-	$sql = "SELECT SQL_CALC_FOUND_ROWS A.id, A.titulo, A.resumen, U.nombreParaMostrar, U.rutaImagen, DATEDIFF(now(), A.fechaHoraPublicacion) as dias, A.mejorArticulo FROM Articulos A JOIN Usuarios U on U.id = A.idUsuario WHERE publicado = 1 ORDER BY A.fechaHoraPublicacion DESC LIMIT $inicio, $postPorPagina";
+	$sql = "SELECT SQL_CALC_FOUND_ROWS A.id, A.titulo, A.resumen, A.fotoPrincipal, U.nombreParaMostrar, U.rutaImagen, DATEDIFF(now(), A.fechaHoraPublicacion) as dias, A.mejorArticulo FROM Articulos A JOIN Usuarios U on U.id = A.idUsuario WHERE publicado = 1 ORDER BY A.fechaHoraPublicacion DESC LIMIT $inicio, $postPorPagina";
 	$prepared = $pdo->prepare($sql);
 	$prepared->execute();
 	$articulos = $prepared->fetchAll(PDO::FETCH_ASSOC);
@@ -218,7 +215,7 @@ $router->get('/p/{pagina}',function($pagina) use($pdo) {
 
 
 
-	return render('./../views/articles.php', ['articulos' => $articulos, 'mejorArticulo' => $mejorArticulo, 'totalPaginas' => $numero_paginas, 'paginaActual' => $pagina ]);
+	return render('./views/articles.php', ['articulos' => $articulos, 'mejorArticulo' => $mejorArticulo, 'totalPaginas' => $numero_paginas, 'paginaActual' => $pagina ]);
 });
 
  ?>

@@ -30,3 +30,13 @@
 .paginas.active, .paginas:hover {
 	background-color: #104d75;
 }
+
+@media screen and (max-width: 600px) {
+	.paginas, .paginas:active, .paginas:visited {
+		padding: 0.3rem;
+	}
+
+	.paginacion > ul > li {
+		margin: 0 0.05rem;
+	}
+}

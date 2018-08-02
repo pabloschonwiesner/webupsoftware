@@ -1,6 +1,6 @@
 <header class="headerWhite" id="header">
 	<figure id="isologo">
-		<a href="http://www.upsoftware.com.ar"><img src="<?php echo BASE_URL; ?>../views/media/images/isologoBlack.svg" alt="Isologo UpSoftware" id="imgLogo"></a>
+		<a href="http://www.upsoftware.com.ar"><img src="<?php echo BASE_URL; ?>views/media/images/isologoBlack.svg" alt="Isologo UpSoftware" id="imgLogo"></a>
 	</figure>
 	<figure class="usuario">
 		<?php 

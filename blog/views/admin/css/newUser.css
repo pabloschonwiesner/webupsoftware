@@ -53,3 +53,33 @@ input[type="submit"] {
 .msj {
 	margin-top: 3rem;
 }
+
+@media screen and (max-width: 600px) {
+	.containerUsers {
+		min-width: 0;
+		width: 100%;
+	}
+
+	.avatar {
+		width: 15rem;
+		height: 15rem
+	}
+
+	.user {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	input[type="text"], input[type="password"] {
+		width: auto;
+	}
+
+	input[type="submit"] {
+		position: static;
+	}
+
+	label {
+		width: 100%;
+	}
+
+}
