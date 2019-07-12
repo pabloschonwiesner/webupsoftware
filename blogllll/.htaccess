@@ -1,0 +1,3 @@
+Options All -Indexes 
+
+FallbackResource "upsoftware/web/blog/index.html"

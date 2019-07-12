@@ -18,7 +18,7 @@
 		$data .= "\n Mail: " . $mail;
 		$data .= "\n Telefono: " . $telefono;
 		$data .= "\n Mensaje: " . $mensaje;
-		$destino = "pschonwiesner@upsoftware.com.ar";
+		$destino = "info@upsoftware.com.ar";
 		$remitente = $mail;
 		$asunto = "Contacto: " . $nombre;
 

@@ -16,7 +16,7 @@ class ComposerStaticInit080f99062fb492d566d040261626be1a
     public static $prefixDirsPsr4 = array (
         'Phroute\\Phroute\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phroute/phroute/src/Phroute',
+            0 => __DIR__ . '/..' . '/Phroute/Phroute/src/Phroute',
         ),
     );
 

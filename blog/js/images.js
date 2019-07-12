@@ -225,6 +225,7 @@
 
         $file.click();
         window.myFiles.push($file);
+        
     };
 
     /**
@@ -364,6 +365,7 @@
 
         this.core.clean();
         this.sorting();
+        
     };
 
     /**

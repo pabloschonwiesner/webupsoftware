@@ -20,9 +20,9 @@
 
 $bd_config = array(
 	'servidor' => 'localhost',
-	'basedatos' => 'blogupsoftware',
-	'usuario' => 'root',
-	'pass' => ''
+	'basedatos' => 'soft2019_blogupsoftware',
+	'usuario' => 'soft2019_upsoft',
+	'pass' => 'SisproTerminal2019'
 );
 
 $blog_config = array(

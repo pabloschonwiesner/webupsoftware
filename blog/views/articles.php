@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Blog | Up Software</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="icon" type="image/x-icon" sizes="16x16" href="./../media/images/favicon.ico">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/adminBlog.css">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/blog.css">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/paginacion.css">
@@ -36,22 +37,8 @@
 		
 		if(isset($articulos) && $articulos) {
 			echo '<div class="container">';
-			echo 	'<h1 class="tituloPosts">Posts</h1>';
-			echo 	'<div class="posts">';
-			// foreach($articulos as $articulo) {
-			// 	echo '<a href="' . BASE_URL . $articulo['id'] . '">';
-			// 	echo 	'<article class="articleBlog">';
-			// 	echo 		'<h4 class="tituloArticulo">' . $articulo['titulo'] .'</h4>';
-			// 	echo 		'<p class="resumenArticulo">' . $articulo['resumen'] . '</p>';
-			// 	echo        '<div class="avatarContent">';
-			// 	echo 			'<figure class="avatar"><img class="avatarImg" src="' . BASE_LOCAL_IMAGES_WEB . 'usuarios/' . $articulo['rutaImagen'] . '" alt="Avatar" /></figure>';
-			// 	echo 			'<span class="avatarNombre">' . $articulo['nombreParaMostrar'] . '</span>';
-			// 	echo            '<span class="fecha icon-clock"> hace ' . $articulo['dias'] . ' dias</span>';
-			// 	echo        '</div>';
-			// 	echo 	'</article>';
-			// 	echo '</a>';
-				
-			// }			
+			// echo 	'<h1 class="tituloPosts">Posts</h1>';
+			echo 	'<div class="posts">';			
 
 			foreach ($articulos as $articulo) {
 				

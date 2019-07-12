@@ -1,8 +1,7 @@
 <?php 
 
-
 $router->get('/admin/users', function() use($pdo) {
-	$sql = "SELECT * from Usuarios";
+	$sql = "SELECT * from usuarios";
 	$prepared = $pdo->prepare($sql);
 	$prepared->execute();
 	$usuarios = $prepared->fetchAll(PDO::FETCH_ASSOC);
@@ -11,14 +10,14 @@ $router->get('/admin/users', function() use($pdo) {
 });
 
 $router->get('/admin/usersActivate/{id}', function($id) use($pdo) {
-	$sql1 = "SELECT Activo FROM Usuarios WHERE id = :id";
+	$sql1 = "SELECT Activo FROM usuarios WHERE id = :id";
 	$prepared1 = $pdo->prepare($sql1);
 	$prepared1->execute([
 		'id' => $id
 	]);
 	$rta = $prepared1->fetchAll(PDO::FETCH_ASSOC);
 
-	$sql2 = "UPDATE Usuarios SET Activo = :activo WHERE id = :id";
+	$sql2 = "UPDATE usuarios SET Activo = :activo WHERE id = :id";
 	$prepared2 = $pdo->prepare($sql2);
 	$usuarios = $prepared2->execute([
 		'activo' => !$rta[0]['Activo'],
@@ -37,14 +36,14 @@ $router->post('/admin/newUser', function() use($pdo) {
 		$tmp_name = isset($_FILES['file']['tmp_name']) ? $_FILES['file']['tmp_name'] : '';		
 	}
 	
-	$sql1 = "SELECT max(id) + 1 as id from Usuarios LIMIT 1";
+	$sql1 = "SELECT max(id) + 1 as id from usuarios LIMIT 1";
 	$prepared1 = $pdo->prepare($sql1);
 	$prepared1->execute();
 	$id = $prepared1->fetchAll(PDO::FETCH_ASSOC);
 
 	if(empty($file)) {
 		$file = '1.jpg';
-		$sql = "INSERT INTO Usuarios (nombre, tipoUsuario, activo, pass, rutaImagen) 
+		$sql = "INSERT INTO usuarios (nombre, tipoUsuario, activo, pass, rutaImagen) 
 		values (:nombre, 1, 1, :pass, :rutaImagen)";
 		$prepared = $pdo->prepare($sql);
 		$result = $prepared->execute([
@@ -54,7 +53,7 @@ $router->post('/admin/newUser', function() use($pdo) {
 		]);
 	} else {
 		$file = $id[0]['id'] . '.jpg';
-		$sql = "INSERT INTO Usuarios (nombre, tipoUsuario, activo, pass, rutaImagen) 
+		$sql = "INSERT INTO usuarios (nombre, tipoUsuario, activo, pass, rutaImagen) 
 		values (:nombre, 1, 1, :pass, :rutaImagen)";
 		$prepared = $pdo->prepare($sql);
 		$result = $prepared->execute([
@@ -67,14 +66,14 @@ $router->post('/admin/newUser', function() use($pdo) {
 	if(!empty($tmp_name)) {
 			$carpeta = BASE_LOCAL_IMAGE . 'usuarios';
 			$dir = opendir($carpeta);
-			move_uploaded_file($tmp_name, $carpeta . '\\' . $file);
+			move_uploaded_file($tmp_name, $carpeta . '/' . $file);
 		}
 
 	return render('./views/admin/newUser.php', [ 'result' => $result ]);
 });
 
 $router->get('/admin/editUser/{id}', function($id) use($pdo) {
-	$sql = "SELECT * FROM Usuarios WHERE id = :id LIMIT 1";
+	$sql = "SELECT * FROM usuarios WHERE id = :id LIMIT 1";
 	$prepared = $pdo->prepare($sql);
 	$prepared->execute([
 		'id' => $id
@@ -91,7 +90,7 @@ $router->post('/admin/editUser', function() use($pdo) {
 	}
 
 	if(empty($file)) {
-		$sql = "UPDATE Usuarios	SET nombre = :nombre, nombreParaMostrar = :nombreParaMostrar, pass = :pass WHERE id = :id";
+		$sql = "UPDATE usuarios	SET nombre = :nombre, nombreParaMostrar = :nombreParaMostrar, pass = :pass WHERE id = :id";
 		$prepared = $pdo->prepare($sql);
 		$result = $prepared->execute([
 			'nombre' => $_POST['nombre'],
@@ -100,7 +99,7 @@ $router->post('/admin/editUser', function() use($pdo) {
 			'id' => $_POST['id']
 		]);
 	} else {
-		$sql = "UPDATE Usuarios	SET nombre = :nombre, nombreParaMostrar = :nombreParaMostrar, pass = :pass, rutaImagen = :rutaImagen WHERE id = :id";
+		$sql = "UPDATE usuarios	SET nombre = :nombre, nombreParaMostrar = :nombreParaMostrar, pass = :pass, rutaImagen = :rutaImagen WHERE id = :id";
 		$prepared = $pdo->prepare($sql);
 		$result = $prepared->execute([
 			'nombre' => $_POST['nombre'],
@@ -119,7 +118,7 @@ $router->post('/admin/editUser', function() use($pdo) {
 					unlink($carpeta . '\\' . $current);
 				}
 			}
-			move_uploaded_file($tmp_name, $carpeta . '\\' . $file);
+			move_uploaded_file($tmp_name, $carpeta . '/' . $file);
 		}
 
 	return render('./views/admin/editUser.php', [ 'result' => $result ]);

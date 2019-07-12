@@ -1,3 +1,10 @@
+# Use PHP71 as default
+#AddHandler application/x-httpd-php71 .php
+# BEGIN custom php.ini PHP71
+#<IfModule mod_suphp.c>
+#    suPHP_ConfigPath /home4/zaphalo/public_html/blog/
+#</IfModule>
+# END custom php.ini
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

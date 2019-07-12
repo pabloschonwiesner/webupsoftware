@@ -1,0 +1,4 @@
+mysql
+base:
+usuario: soft2019_upsoft
+clave: SisproTerminal2019	

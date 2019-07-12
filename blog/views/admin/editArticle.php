@@ -11,6 +11,7 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/medium-editor-insert-plugin.min.css">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="./../media/images/favicon.ico">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/adminBlog.css">
 	<link rel="stylesheet" href="./../../views/admin/css/editArticle.css">
 	<?php include_once './views/admin/headerArticles.php'; ?>
@@ -34,7 +35,7 @@
 						echo '<div class="alert alert-success role="alert">Articulo modificado!</div>';
 						header("refresh:3; url=./../../admin/p/1");
 					} else {
-						echo '<form method="post" enctype="multipart/form-data">';
+						echo '<form method="post" id="formBlog" >';
 						foreach($articulo as $art) {		
                             if($art['mejorArticulo'] == 1) {
                                 $mejorArticulo = true;
@@ -42,7 +43,7 @@
                                 $mejorArticulo = false;
                             }
 
-							echo '<div class="form-group">';
+							echo '<div class="form-group" enctype="multipart/form-data">';
 							echo	'<label for="title">Titulo</label>';
 							echo	'<input type="text" name="title" id="title" class="form-control" value="' . $art['titulo'] . '">';
 							echo '</div>';
@@ -53,7 +54,7 @@
 							echo '<div class="form-group">';
 							echo	'<label for="file">Foto principal</label>';
                             echo    '<p class="fotoSeleccionada"> Foto seleccionada: ' . $art['fotoPrincipal'] . '</p>';
-							echo	'<input type="file" name="file" id="file" class="form-control">';
+							echo	'<input type="file" name="file" id="file" class="form-control" formenctype="multipart/form-data">';
                             echo '</div>';
                             echo '<div class="form-group">';
                             if($mejorArticulo) {
@@ -62,7 +63,7 @@
                                 echo    '<label for="artPrincipal" ><input type="checkbox" name="artPrincipal" id="marcaArtPpal" />Articulo Principal</label>';
                             }
                             echo '</div>';
-							echo '<textarea name="textoBlog" id="textoBlog" cols="30" rows="10" class="editable">' . 	($art['textoArticulo']) . '</textarea>';
+							echo '<textarea name="textoBlog" id="textoBlog" cols="30" rows="10" class="editable">' . $art['textoArticulo'] . '</textarea>';
 						}					
 						echo '<br>';
 						echo '<input class="btn btn-primary" type="submit" value="Guardar" id="btnSave">';

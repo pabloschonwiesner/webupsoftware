@@ -4,20 +4,21 @@
 	<meta charset="UTF-8">
 	<title>Editar artículo de Blog | Up Software</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="icon" type="image/x-icon" sizes="16x16" href="./media/images/favicon.ico">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/adminBlog.css">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/blog.css">
 	<?php include_once './views/admin/headerArticles.php'; ?>
-	<meta property="og:type" content="Image" />
+	<meta property="og:type" content="website">
 	<meta property="og:title" content="<?php echo $articulo[0]['titulo'];  ?>" />
 	<meta property="og:description" content="<?php echo $articulo[0]['resumen']; ?>" />
 	<meta property="og:url" content="<?php echo BASE_URL . $articulo[0]['id']; ?>" />
-	<meta property="og:image" content="<?php echo BASE_LOCAL_IMAGES_WEB . $articulo[0]['id'] . '/principal/' . $articulo[0]['rutaImagen']; ?>" />
+	<meta property="og:image" content="<?php echo BASE_LOCAL_IMAGES_WEB . $articulo[0]['id'] . '/principal/' . $articulo[0]['fotoPrincipal']; ?>" />
+	<meta property="og:site_name" content="upsoftware.com.ar">
 	
 </head>
 <body>
 	<div>
 	<?php 
-
 			if(isset($articulo) && $articulo) {
 				foreach($articulo as $art) {
 					echo '<div class="containerArticle">';

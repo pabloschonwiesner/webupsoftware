@@ -120,10 +120,14 @@ header {
 	font-size: 1.3rem;
 }
 
-.textBlog > p > img{
+.textBlog > p > img, .medium-insert-images > figure > img {
 	width: 100%;
-	margin-bottom: 10px;
+	margin: 2rem 0;
 	text-align: left;
+}
+
+.fb-share-button {
+	margin-bottom: 2rem;
 }
 
 .textBlog > ol, .textBlog > ul {
@@ -131,7 +135,8 @@ header {
 }
 
 .textBlog > h2, .textBlog>h3, .textBlog>h4 {
-	margin-bottom: 30px;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
 }
 
 blockquote {
@@ -152,6 +157,7 @@ blockquote {
 .posts {
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 3rem;
 }
 
 a {
@@ -230,7 +236,7 @@ a.articleBlog > article> figure  {
 
 .avatarNombre, .fecha {
 	padding-left: 1rem;
-	font-size: 0.75rem;
+	/*font-size: 0.75rem;*/
 	line-height: 1.7rem;
 }
 
@@ -298,11 +304,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	.data > h1, .avatarContent, .tituloMejorArticulo {
 		margin: 0;
 		width: 100%;
+		font-size: large;
 	}
 
 	.avatarNombre, .fecha { 
 		font-size: 0.75rem;
-		line-height: 0.75rem;
 	}
 
 	.fecha {

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/default.css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="./../media/images/favicon.ico">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/medium-editor-insert-plugin.min.css">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/adminBlog.css">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>views/admin/css/newArticle.css">

@@ -1,0 +1,4 @@
+<?php 
+	$texto = 'prueba php';
+
+ ?>

@@ -5,9 +5,9 @@ $entorno = 'desarrollo';
 
 if($entorno == 'produccion') {
 	$dbHost = 'localhost';
-	$dbName = 'zaphalo_blogupsoftware';
-	$dbUser = 'zaphalo_upsoft';
-	$dbPass = '31122018';	
+	$dbName = 'soft2019_blogupsoftware';
+	$dbUser = 'soft2019_upsoft';
+	$dbPass = 'SisproTerminal2019';	
 } else {
 	$dbHost = 'localhost';
 	$dbName = 'blogupsoftware';
